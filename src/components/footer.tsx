@@ -37,7 +37,7 @@ export function Footer() {
                 <a href="mailto:info@rushmarketing.nl">Open sollicitatie</a>
               </li>
               <li>
-                <a href="#perks">Secundaire arbeid</a>
+                <a href="#perks">Arbeidsvoorwaarden</a>
               </li>
               <li>
                 <a href="#values">Waarden</a>
