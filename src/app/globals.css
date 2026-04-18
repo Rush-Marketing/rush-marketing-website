@@ -1095,10 +1095,9 @@ section {
   border-radius: 16px;
   padding: 22px 28px;
   border: 1px solid transparent;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 90px minmax(0, auto) 36px;
-  gap: 20px;
+  display: flex;
   align-items: center;
+  gap: 20px;
   transition: border-color 0.15s, transform 0.15s, background 0.15s;
   cursor: pointer;
 }
@@ -1108,14 +1107,25 @@ section {
   background: #fff;
 }
 .job h3 {
+  flex: 1 1 auto;
+  min-width: 0;
   font-size: 18px;
   letter-spacing: -0.005em;
-  min-width: 0;
   color: var(--green);
 }
+.job .tag {
+  flex: 0 0 auto;
+  min-width: 72px;
+  text-align: center;
+}
 .job .meta {
+  flex: 0 0 auto;
+  min-width: 210px;
   font-size: 13px;
   color: var(--text-muted);
+}
+.job .arr {
+  flex: 0 0 36px;
 }
 
 .jobs-intro {
@@ -1673,6 +1683,7 @@ footer .bottom a:hover {
     min-height: 380px;
   }
   .job {
+    display: grid;
     grid-template-columns: auto minmax(0, 1fr) 36px;
     grid-template-rows: auto auto;
     gap: 6px 14px;
@@ -1687,11 +1698,13 @@ footer .bottom a:hover {
     grid-column: 1;
     grid-row: 2;
     align-self: center;
+    min-width: 0;
   }
   .job .meta {
     grid-column: 2;
     grid-row: 2;
     align-self: center;
+    min-width: 0;
   }
   .job .arr {
     grid-column: 3;
