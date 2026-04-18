@@ -1178,13 +1178,14 @@ section {
   overflow: hidden;
 }
 .job-hero .back {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 8px;
   font-size: 13px;
   color: rgba(232, 227, 216, 0.7);
   letter-spacing: 0.02em;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   transition: color 0.15s;
 }
 .job-hero .back:hover {
