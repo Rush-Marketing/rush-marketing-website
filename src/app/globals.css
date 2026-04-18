@@ -1096,8 +1096,8 @@ section {
   padding: 22px 28px;
   border: 1px solid transparent;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 82px 260px 36px;
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 90px minmax(0, auto) 36px;
+  gap: 20px;
   align-items: center;
   transition: border-color 0.15s, transform 0.15s, background 0.15s;
   cursor: pointer;
@@ -1111,16 +1111,19 @@ section {
   font-size: 18px;
   letter-spacing: -0.005em;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  color: var(--green);
 }
 .job .meta {
   font-size: 13px;
   color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.jobs-intro {
+  margin: 28px 0 0;
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 440px;
 }
 .job .tag {
   font-size: 11px;
@@ -1153,6 +1156,240 @@ section {
 .job:hover .arr {
   background: var(--gold);
   color: #fff;
+}
+
+/* ───────── JOB DETAIL PAGE ───────── */
+.job-hero {
+  background: radial-gradient(900px 500px at 80% 20%, rgba(207, 141, 64, 0.18), transparent 70%),
+    var(--green);
+  color: #fff;
+  padding: calc(var(--nav-h) + 72px) 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+.job-hero .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(232, 227, 216, 0.7);
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+  transition: color 0.15s;
+}
+.job-hero .back:hover {
+  color: #fff;
+}
+.job-hero .eyebrow {
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.job-hero h1 {
+  color: #fff;
+  max-width: 22ch;
+  font-size: clamp(36px, 5.2vw, 72px);
+  line-height: 1.04;
+}
+.job-hero .meta {
+  margin-top: 28px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.job-hero .meta .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e8e3d8;
+}
+.job-hero .meta .pill.status {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 11.5px;
+}
+.job-hero .meta .pill.status.open {
+  background: var(--gold-light);
+  color: var(--gold-dark);
+  border-color: transparent;
+}
+
+.job-body {
+  background: #fff;
+  padding: 96px 0;
+}
+.job-body .layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 80px;
+  align-items: start;
+}
+.job-body .lede {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+.job-body h2 {
+  font-size: 28px;
+  margin-top: 48px;
+  margin-bottom: 18px;
+}
+.job-body h2:first-child {
+  margin-top: 0;
+}
+.job-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.job-body ul li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.job-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 14px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.job-body .aside {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 28px 28px 32px;
+}
+.job-body .aside b {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--green);
+  margin-bottom: 8px;
+  letter-spacing: -0.005em;
+}
+.job-body .aside p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+.job-body .aside dl {
+  margin: 18px 0 24px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--cream-2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.job-body .aside dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+.job-body .aside dt {
+  color: var(--text-muted);
+}
+.job-body .aside dd {
+  margin: 0;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.job-apply {
+  background: var(--gold);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.job-apply::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+.job-apply::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(40, 71, 66, 0.12);
+}
+.job-apply .row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.job-apply h2 {
+  color: #fff;
+  font-size: clamp(30px, 3.6vw, 48px);
+}
+.job-apply h2 em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--green);
+}
+.job-apply p {
+  margin-top: 18px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 540px;
+}
+.job-apply .ctas {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  .job-body .layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .job-body .aside {
+    position: static;
+  }
+  .job-apply .row {
+    grid-template-columns: 1fr;
+  }
+  .job-apply .ctas {
+    justify-content: flex-start;
+  }
 }
 
 /* ───────── OPEN SOLLICITATIE CTA ───────── */
@@ -1434,5 +1671,31 @@ footer .bottom a:hover {
   }
   .about .collage {
     min-height: 380px;
+  }
+  .job {
+    grid-template-columns: auto minmax(0, 1fr) 36px;
+    grid-template-rows: auto auto;
+    gap: 6px 14px;
+    padding: 18px 22px;
+  }
+  .job h3 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    font-size: 16.5px;
+  }
+  .job .tag {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+  }
+  .job .meta {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+  }
+  .job .arr {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
   }
 }
