@@ -87,7 +87,7 @@ export const employees: Employee[] = [
   // Directie
   {
     name: "Stef Bosgoed",
-    role: "Directeur Finance & Strategie",
+    role: "Mede-eigenaar · Directeur Finance & Strategie",
     teamSlug: "directie",
     bio: "Onze strateeg. Bouwt aan de lange lijn van 4All.",
     callFor: "Strategische keuzes, investeringen, financiering en contracten.",
@@ -96,7 +96,7 @@ export const employees: Employee[] = [
   },
   {
     name: "Lamco de Vries",
-    role: "Directeur Inkoop & Formulemanagement",
+    role: "Mede-eigenaar · Directeur Inkoop & Formulemanagement",
     teamSlug: "directie",
     bio: "Onze handelsman. Vraag iets aan hem en het is vandaag geregeld.",
     callFor: "Inkoop, leveranciers, nieuwe panden en nieuwe franchisers.",

@@ -29,7 +29,7 @@ const perks: Perk[] = [
   },
   {
     title: "Opleidingsbudget",
-    body: "€ 2.500 per twee jaar voor cursus, training, opleiding of inspiratiereis. Passend bij waar jij naartoe wilt.",
+    body: "We investeren graag in je: cursus, training, opleiding of inspiratiereis. Passend bij jouw rol en waar je naartoe wilt.",
     icon: <path d="M4 4h16v4H4zM4 10h10M4 14h10M4 18h10M18 14v6M15 17h6" />,
   },
   {

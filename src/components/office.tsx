@@ -23,9 +23,9 @@ const tiles = [
     caption: "Maandag: iemand kookt",
   },
   {
-    src: "/imagery/rush-lunch-1.jpg",
-    alt: "Samen lunchen aan de grote tafel",
-    caption: "Samen lunchen",
+    src: "/imagery/rush-kook-5.jpg",
+    alt: "Collega maakt de borden op voor de lunch",
+    caption: "De lunch komt eraan",
   },
   {
     src: "/imagery/rush-teamfoto.jpg",
