@@ -134,10 +134,10 @@ export const employees: Employee[] = [
   },
   {
     name: "Isabelle Janssen",
-    role: "Grafisch specialist",
+    role: "Content marketeer, focus grafisch",
     teamSlug: "merk-content",
-    bio: "Maakt de mooie dingen. Van campagnebeeld tot winkelmateriaal, altijd strak in de huisstijl.",
-    callFor: "Ontwerp, beeld en visuele uitingen.",
+    bio: "Content met een oog voor beeld. Maakt de mooie dingen, van campagne tot winkelmateriaal, strak in de huisstijl.",
+    callFor: "Content, ontwerp en visuele uitingen.",
     avatarUrl: "/team/isabelle-janssen.jpg",
   },
   {
