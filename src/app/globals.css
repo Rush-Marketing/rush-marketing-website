@@ -475,6 +475,7 @@ a {
 
 .about .photo img {
   object-fit: cover;
+  object-position: 50% 15%;
 }
 
 /* ============================================================
