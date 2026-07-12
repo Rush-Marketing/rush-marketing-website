@@ -646,64 +646,134 @@ a {
   color: rgba(255, 255, 255, 0.68);
 }
 
-.martech .grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+/* ---- Martech-motor: interactieve dataflow ---- */
+
+.martech .engine {
+  margin-top: 8px;
 }
 
-.martech .feature {
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: var(--radius-md);
-  padding: 32px 28px;
-  transition:
-    background 0.3s ease,
-    transform 0.3s var(--ease-out);
+.martech .stage {
+  position: relative;
+  height: 460px;
+  width: 100%;
 }
 
-.martech .feature:hover {
-  background: rgba(255, 255, 255, 0.09);
-  transform: translateY(-3px);
+.martech .stage canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.martech .icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(207, 141, 64, 0.16);
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-}
-
-.martech .icon svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.martech .feature h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
+.martech .node {
+  position: absolute;
+  left: var(--dx);
+  top: var(--dy);
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px 11px 14px;
+  border-radius: 999px;
+  background: rgba(26, 49, 45, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   color: #fff;
+  font-family: var(--font-body), sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s ease;
 }
 
-.martech .feature p {
-  font-size: 14.5px;
+.martech .node .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(207, 141, 64, 0.18);
+  flex-shrink: 0;
+}
+
+.martech .node.hub .dot {
+  background: var(--gold-light);
+  box-shadow: 0 0 0 4px rgba(244, 228, 204, 0.16);
+}
+
+.martech .node.result .dot {
+  background: #7fb08a;
+  box-shadow: 0 0 0 4px rgba(127, 176, 138, 0.18);
+}
+
+.martech .node.active,
+.martech .node:hover {
+  background: rgba(207, 141, 64, 0.2);
+  border-color: rgba(207, 141, 64, 0.7);
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 12px 40px -16px rgba(0, 0, 0, 0.6);
+}
+
+.martech .node.hub {
+  font-weight: 600;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.martech .detail {
+  max-width: 560px;
+  margin: 24px auto 0;
+  text-align: center;
+  min-height: 96px;
+}
+
+.martech .detail b {
+  display: block;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.martech .detail .tag {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.martech .detail p {
+  font-size: 15.5px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.66);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .martech .stack {
-  margin-top: 56px;
+  margin-top: 48px;
   text-align: center;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 720px) {
+  .martech .stage {
+    height: 620px;
+  }
+
+  .martech .node {
+    left: var(--mx);
+    top: var(--my);
+    font-size: 13.5px;
+    padding: 9px 14px 9px 12px;
+  }
 }
 
 /* ============================================================
@@ -799,6 +869,141 @@ a {
 
 .brand-card:hover .arr {
   transform: translateX(4px);
+}
+
+/* ============================================================
+   Winkelkaart (47 winkels op de kaart)
+   ============================================================ */
+
+.winkelkaart {
+  padding: 128px 0;
+}
+
+.winkelkaart .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.winkelkaart h2 {
+  font-size: clamp(34px, 4.4vw, 52px);
+  margin: 16px 0 20px;
+}
+
+.winkelkaart .text p {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+.winkelkaart .legend {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.winkelkaart .legend li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.winkelkaart .legend .key {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.winkelkaart .legend .key.k4a {
+  background: var(--gold);
+}
+
+.winkelkaart .legend .key.s4a {
+  background: #5c8a6f;
+}
+
+.winkelkaart .map {
+  position: relative;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+}
+
+.winkelkaart svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.winkelkaart .land {
+  filter: drop-shadow(0 22px 44px rgba(26, 49, 45, 0.16));
+}
+
+.winkelkaart .land path {
+  fill: #ffffff;
+  stroke: var(--cream-2);
+  stroke-width: 1;
+  transition: fill 0.3s ease;
+}
+
+.winkelkaart .map:hover .land path {
+  fill: #fffdf8;
+}
+
+.winkelkaart .dot {
+  cursor: pointer;
+  transition:
+    r 0.2s var(--ease-out),
+    fill 0.2s ease;
+}
+
+.winkelkaart .dot.k4a {
+  fill: var(--gold);
+}
+
+.winkelkaart .dot.s4a {
+  fill: #5c8a6f;
+}
+
+.winkelkaart .dot.on {
+  fill: var(--green);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .winkelkaart .dot {
+    animation: winkelpuls 3.4s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}
+
+@keyframes winkelpuls {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.winkelkaart .tip {
+  position: absolute;
+  transform: translate(-50%, -180%);
+  padding: 5px 11px;
+  border-radius: 8px;
+  background: var(--green-dark);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 /* ============================================================
@@ -1633,8 +1838,20 @@ footer .bottom a:hover {
   .people,
   .jobs,
   .proces,
+  .winkelkaart,
   .contact {
     padding: 80px 0;
+  }
+
+  .winkelkaart .row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .winkelkaart .map {
+    max-width: 420px;
+    margin: 0 auto;
+    order: -1;
   }
 
   .proces .steps {
