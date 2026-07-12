@@ -8,7 +8,7 @@ export function CultureQuote() {
         </blockquote>
         <div className="cite" data-reveal="1">
           <b>Stef Bosgoed</b>
-          <span>Directeur Finance &amp; Strategie</span>
+          <span>Mede-eigenaar · Directeur Finance &amp; Strategie</span>
         </div>
       </div>
     </section>

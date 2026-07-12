@@ -861,7 +861,12 @@ a {
 
 .office .tile img {
   object-fit: cover;
+  object-position: 50% 22%;
   transition: transform 0.6s var(--ease-out);
+}
+
+.office .tile.wide img {
+  object-position: 50% 45%;
 }
 
 .office .tile:hover img {
