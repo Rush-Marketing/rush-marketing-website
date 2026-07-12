@@ -40,7 +40,7 @@ export function Footer() {
                 <a href="#perks">Arbeidsvoorwaarden</a>
               </li>
               <li>
-                <a href="#values">Waarden</a>
+                <a href="#team">Wie doet wat</a>
               </li>
             </ul>
           </div>

@@ -5,28 +5,34 @@ import { CultureQuote } from "@/components/culture-quote";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { Jobs } from "@/components/jobs";
+import { Martech } from "@/components/martech";
 import { Nav } from "@/components/nav";
+import { Office } from "@/components/office";
+import { Ondernemers } from "@/components/ondernemers";
 import { OpenCta } from "@/components/open-cta";
 import { People } from "@/components/people";
 import { Perks } from "@/components/perks";
+import { Reveal } from "@/components/reveal";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Stats } from "@/components/stats";
-import { TeamCollage } from "@/components/team-collage";
 import { Values } from "@/components/values";
 
 export default function HomePage() {
   return (
     <>
       <SmoothScroll />
+      <Reveal />
       <Nav />
       <Hero />
       <Stats />
       <About />
-      <Brands />
       <CultureQuote />
+      <Ondernemers />
+      <Martech />
+      <Brands />
       <Values />
       <Perks />
-      <TeamCollage />
+      <Office />
       <People />
       <Jobs />
       <OpenCta />

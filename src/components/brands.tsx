@@ -1,88 +1,75 @@
 import Image from "next/image";
 
+const brands = [
+  {
+    name: "Kitchen4All",
+    url: "https://www.kitchen4all.nl",
+    display: "kitchen4all.nl",
+    image: "/imagery/kitchen4all-hero.jpg",
+    logo: "/logos/kitchen4all-logo.png",
+    facts: "20 winkels · 3.000+ keukens per jaar",
+    body: "De keukenfranchise die inspiratie, apparatuur en service combineert. Winkels door heel Nederland en een online platform dat de hele aankoopreis begeleidt.",
+  },
+  {
+    name: "Sani4All",
+    url: "https://www.sani4all.nl",
+    display: "sani4all.nl",
+    image: "/imagery/sani4all-hero.jpg",
+    logo: "/logos/sani4all-logo.png",
+    facts: "27 winkels · 6.000+ badkamers per jaar",
+    body: "De badkamerfranchise die het begrijpelijk en betaalbaar maakt. Advies van mensen die hun vak verstaan, geen trucjes, gewoon eerlijk.",
+  },
+];
+
 export function Brands() {
   return (
     <section className="brands" id="brands">
       <div className="container">
         <div className="section-intro">
-          <span className="eyebrow">Onze merken</span>
-          <h2>
+          <span className="hand" data-reveal>
+            Onze merken
+          </span>
+          <h2 data-reveal="1">
             Twee merken,
             <br />
             één familie.
           </h2>
-          <p>
-            Kitchen4All en Sani4All delen dezelfde DNA. Eerlijke prijzen, slimme showrooms, échte
-            begeleiding. Wij maken de marketing voor beide franchises, van strategie tot campagne
-            tot campagnemateriaal op de vloer.
+          <p data-reveal="2">
+            Kitchen4All en Sani4All delen hetzelfde DNA: eerlijke prijzen, slimme winkels, échte
+            begeleiding. Wij maken de marketing voor beide formules, van strategie tot campagne
+            tot materiaal op de vloer.
           </p>
         </div>
         <div className="cards">
-          <a
-            className="brand-card"
-            href="https://www.kitchen4all.nl"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="photo">
-              <Image
-                src="/imagery/kitchen4all-hero.jpg"
-                alt="Kitchen4All"
-                fill
-                sizes="(max-width: 960px) 100vw, 50vw"
-              />
-              <div className="logo">
+          {brands.map((brand, i) => (
+            <a
+              key={brand.name}
+              className="brand-card"
+              href={brand.url}
+              target="_blank"
+              rel="noreferrer"
+              data-reveal={i}
+            >
+              <div className="photo">
                 <Image
-                  src="/logos/kitchen4all-logo.png"
-                  alt="Kitchen4All"
-                  width={120}
-                  height={32}
+                  src={brand.image}
+                  alt={brand.name}
+                  fill
+                  sizes="(max-width: 960px) 100vw, 50vw"
                 />
+                <div className="logo">
+                  <Image src={brand.logo} alt="" width={110} height={30} />
+                </div>
               </div>
-            </div>
-            <div className="body">
-              <h3>Kitchen4All</h3>
-              <p className="desc">
-                <b>20 showrooms · 3.000+ keukens per jaar.</b> De keukenfranchise die inspiratie,
-                apparatuur en service combineert. Showrooms door heel Nederland en een online
-                platform dat de hele aankoopreis begeleidt.
-              </p>
-            </div>
-            <div className="foot">
-              <span className="url">kitchen4all.nl</span>
-              <span className="arrow">→</span>
-            </div>
-          </a>
-          <a
-            className="brand-card"
-            href="https://www.sani4all.nl"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="photo">
-              <Image
-                src="/imagery/sani4all-hero.jpg"
-                alt="Sani4All"
-                fill
-                sizes="(max-width: 960px) 100vw, 50vw"
-              />
-              <div className="logo">
-                <Image src="/logos/sani4all-logo.png" alt="Sani4All" width={120} height={32} />
+              <div className="body">
+                <b className="facts">{brand.facts}</b>
+                <p>{brand.body}</p>
+                <span className="url">
+                  {brand.display} <span className="arr">→</span>
+                </span>
               </div>
-            </div>
-            <div className="body">
-              <h3>Sani4All</h3>
-              <p className="desc">
-                <b>27 showrooms · 6.000+ badkamers per jaar.</b> De badkamerfranchise die het
-                begrijpelijk en betaalbaar maakt. Advies van mensen die hun vak verstaan, geen
-                trucjes, gewoon eerlijk.
-              </p>
-            </div>
-            <div className="foot">
-              <span className="url">sani4all.nl</span>
-              <span className="arrow">→</span>
-            </div>
-          </a>
+            </a>
+          ))}
         </div>
       </div>
     </section>
