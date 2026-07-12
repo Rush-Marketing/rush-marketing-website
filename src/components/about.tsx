@@ -37,8 +37,8 @@ export function About() {
           </div>
           <div className="photo" data-reveal="2">
             <Image
-              src="/imagery/rush-team-2.jpg"
-              alt="Het team van Rush Marketing samen op kantoor"
+              src="/imagery/rush-kook-4.jpg"
+              alt="Twee collega's bakken samen in de kookstudio"
               fill
               sizes="(max-width: 960px) 100vw, 46vw"
             />
