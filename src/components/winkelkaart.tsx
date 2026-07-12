@@ -19,7 +19,10 @@ export function Winkelkaart() {
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
-    const paths = Array.from(svg.querySelectorAll<SVGPathElement>("path[data-prov]"));
+    // Zeeland heeft geen winkels, dus daar plaatsen we ook geen punten.
+    const paths = Array.from(svg.querySelectorAll<SVGPathElement>("path[data-prov]")).filter(
+      (p) => p.getAttribute("data-name") !== "Zeeland",
+    );
     if (!paths.length) return;
 
     // deterministische pseudo-random zodat de kaart bij elke render gelijk is
@@ -30,34 +33,47 @@ export function Winkelkaart() {
     };
 
     const total = K4A + S4A;
-    // verdeel de punten over provincies naar verhouding van hun omtrek,
-    // met ceil + wat extra zodat we altijd minstens `total` punten hebben
-    const lengths = paths.map((p) => p.getTotalLength());
-    const sum = lengths.reduce((a, b) => a + b, 0);
-    const perProv = lengths.map((l) => Math.max(2, Math.ceil((l / sum) * total) + 1));
+    const boxes = paths.map((p) => p.getBBox());
+    const areas = boxes.map((b) => b.width * b.height);
+    const areaSum = areas.reduce((a, b) => a + b, 0);
 
-    const placed: { x: number; y: number }[] = [];
-    paths.forEach((path, i) => {
-      const len = lengths[i];
-      const box = path.getBBox();
-      const cx = box.x + box.width / 2;
-      const cy = box.y + box.height / 2;
-      for (let k = 0; k < perProv[i]; k++) {
-        const pt = path.getPointAtLength(rand() * len);
-        // trek het punt naar het midden van de provincie zodat het binnen land valt
-        const t = 0.35 + rand() * 0.35;
-        placed.push({ x: pt.x + (cx - pt.x) * t, y: pt.y + (cy - pt.y) * t });
+    // punt echt binnen het land? isPointInFill test tegen de provincievorm
+    const inside = (path: SVGPathElement, x: number, y: number) =>
+      path.isPointInFill(new DOMPoint(x, y));
+
+    const sampleInside = (path: SVGPathElement, box: DOMRect, n: number) => {
+      const out: { x: number; y: number }[] = [];
+      let tries = 0;
+      while (out.length < n && tries < n * 400) {
+        tries++;
+        const x = box.x + rand() * box.width;
+        const y = box.y + rand() * box.height;
+        if (inside(path, x, y)) out.push({ x, y });
       }
+      return out;
+    };
+
+    // verdeel de punten over de provincies naar rato van hun oppervlak
+    let placed: { x: number; y: number }[] = [];
+    paths.forEach((path, i) => {
+      const target = Math.max(1, Math.round((areas[i] / areaSum) * total));
+      placed.push(...sampleInside(path, boxes[i], target));
     });
 
-    // exact 47 punten, en verdeel de formules verspreid over de kaart
-    const shuffled = placed
+    // exact 47 punten
+    placed = placed
       .map((p) => ({ p, r: rand() }))
       .sort((a, b) => a.r - b.r)
-      .slice(0, total)
       .map(({ p }) => p);
+    let guard = 0;
+    while (placed.length < total && guard < paths.length * 60) {
+      const i = guard % paths.length;
+      guard++;
+      placed.push(...sampleInside(paths[i], boxes[i], 1));
+    }
+    const chosen = placed.slice(0, total);
 
-    const result: Dot[] = shuffled.map((p, idx) => ({
+    const result: Dot[] = chosen.map((p, idx) => ({
       x: p.x,
       y: p.y,
       formule: idx % 2 === 0 && idx < K4A * 2 ? "k4a" : "s4a",
@@ -111,7 +127,7 @@ export function Winkelkaart() {
             <svg ref={svgRef} viewBox={NL_VIEWBOX} role="img" aria-label="Kaart van Nederland met 47 winkels">
               <g className="land">
                 {NL_PROVINCES.map((p) => (
-                  <path key={p.id} data-prov={p.id} d={p.path} />
+                  <path key={p.id} data-prov={p.id} data-name={p.name} d={p.path} />
                 ))}
               </g>
               <g className="dots">
