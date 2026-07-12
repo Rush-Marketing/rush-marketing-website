@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 import { jobs } from "@/data/jobs";
 
@@ -23,7 +23,9 @@ export function Jobs() {
         <div className="list" data-reveal>
           {jobs.map((job) => (
             <Link key={job.slug} className="job" href={`/vacatures/${job.slug}`}>
-              <span className="title">{job.title}</span>
+              <span className="title" style={{ viewTransitionName: `job-${job.slug}` }}>
+                {job.title}
+              </span>
               <span className="team">{job.team}</span>
               <span className={`tag${job.status === "Nieuw" ? " new" : ""}`}>{job.status}</span>
               <span className="arr">→</span>

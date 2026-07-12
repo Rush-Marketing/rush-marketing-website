@@ -58,7 +58,12 @@ export function Winkelkaart() {
                     cy={s.y}
                     r={hover === i ? 8 : 5}
                     className={`dot ${s.formule}${hover === i ? " on" : ""}`}
-                    style={{ animationDelay: `${(i % 10) * 0.22}s` }}
+                    style={
+                      {
+                        animationDelay: `${(i % 10) * 0.22}s`,
+                        "--d": `${(i % 14) * 0.045}s`,
+                      } as React.CSSProperties
+                    }
                     onMouseEnter={() => setHover(i)}
                     onMouseLeave={() => setHover((h) => (h === i ? null : h))}
                   />

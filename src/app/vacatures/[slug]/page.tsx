@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/footer";
@@ -46,7 +46,7 @@ export default async function JobPage({ params }: PageProps) {
           <Link href="/#jobs" className="back">
             ← Alle vacatures
           </Link>
-          <h1>{job.title}</h1>
+          <h1 style={{ viewTransitionName: `job-${job.slug}` }}>{job.title}</h1>
           <div className="meta">
             <span className={`pill status${job.status === "Open" ? " open" : ""}`}>
               {job.status}

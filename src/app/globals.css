@@ -132,6 +132,22 @@ a {
   }
 }
 
+/* ---- Paginatransities (View Transitions API) ---- */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 /* ---- Typo helpers ---- */
 
 .eyebrow {
@@ -958,9 +974,18 @@ a {
 
 .winkelkaart .dot {
   cursor: pointer;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
   transition:
+    transform 0.5s var(--ease-out) var(--d, 0s),
     r 0.2s var(--ease-out),
     fill 0.2s ease;
+}
+
+/* scroll-gedreven opbouw: dots poppen gestaggerd in zodra de kaart in beeld komt */
+.winkelkaart .map.in .dot {
+  transform: scale(1);
 }
 
 .winkelkaart .dot.k4a {
@@ -976,10 +1001,15 @@ a {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .winkelkaart .dot {
+  .winkelkaart .map.in .dot {
     animation: winkelpuls 3.4s ease-in-out infinite;
-    transform-box: fill-box;
-    transform-origin: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .winkelkaart .dot {
+    transform: scale(1);
+    transition: none;
   }
 }
 
