@@ -327,9 +327,74 @@ a {
   z-index: -1;
 }
 
-.hero .bg img {
+.hero .bg .slide {
   object-fit: cover;
   object-position: 50% 62%;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+
+.hero .bg .slide.on {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero .bg .slide.on {
+    animation: kenburns 8s ease-out both;
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero .scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 46px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.hero .scroll-cue .chevron {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero .scroll-cue .chevron {
+    animation: scrollcue 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes scrollcue {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .hero .bg::after {
@@ -1083,12 +1148,19 @@ a {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 22px 0;
+  padding: 22px 16px;
+  margin: 0 -16px;
+  border-radius: 14px;
   border-bottom: 1px solid var(--cream);
+  transition: background 0.25s ease;
 }
 
 .jobs .job:last-child {
   border-bottom: none;
+}
+
+.jobs .job:hover {
+  background: var(--cream);
 }
 
 .jobs .job .title {
@@ -1131,6 +1203,47 @@ a {
 
 .jobs .job:hover .arr {
   transform: translateX(4px);
+}
+
+/* ============================================================
+   Proces (zo werkt solliciteren)
+   ============================================================ */
+
+.proces {
+  padding: 128px 0;
+}
+
+.proces .steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  counter-reset: none;
+}
+
+.proces .step {
+  position: relative;
+  padding-top: 28px;
+  border-top: 2px solid var(--cream-2);
+}
+
+.proces .step .n {
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold-dark);
+}
+
+.proces .step h3 {
+  font-size: 20px;
+  margin: 14px 0 10px;
+}
+
+.proces .step p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
 }
 
 /* ============================================================
@@ -1519,8 +1632,14 @@ footer .bottom a:hover {
   .office,
   .people,
   .jobs,
+  .proces,
   .contact {
     padding: 80px 0;
+  }
+
+  .proces .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
   }
 
   .martech {
@@ -1633,7 +1752,8 @@ footer .bottom a:hover {
 @media (max-width: 560px) {
   .martech .grid,
   .perks .grid,
-  .values .grid {
+  .values .grid,
+  .proces .steps {
     grid-template-columns: 1fr;
   }
 }

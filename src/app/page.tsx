@@ -12,6 +12,7 @@ import { Ondernemers } from "@/components/ondernemers";
 import { OpenCta } from "@/components/open-cta";
 import { People } from "@/components/people";
 import { Perks } from "@/components/perks";
+import { Proces } from "@/components/proces";
 import { Reveal } from "@/components/reveal";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Stats } from "@/components/stats";
@@ -35,6 +36,7 @@ export default function HomePage() {
       <Office />
       <People />
       <Jobs />
+      <Proces />
       <OpenCta />
       <Contact />
       <Footer />
