@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Caveat, Lexend_Deca } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 
 const bogart = localFont({
@@ -47,8 +48,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" className={`${bogart.variable} ${lexend.variable} ${caveat.variable}`}>
-      <body>{children}</body>
-    </html>
+    <ViewTransitions>
+      <html lang="nl" className={`${bogart.variable} ${lexend.variable} ${caveat.variable}`}>
+        <body>{children}</body>
+      </html>
+    </ViewTransitions>
   );
 }
