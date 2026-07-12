@@ -8,8 +8,8 @@ export function Nav() {
           <Image
             src="/logos/rush-marketing-circle.png"
             alt="Rush Marketing"
-            width={44}
-            height={44}
+            width={36}
+            height={36}
           />
           <b>Rush Marketing</b>
         </a>
@@ -18,20 +18,23 @@ export function Nav() {
             <a href="#about">Wie wij zijn</a>
           </li>
           <li>
-            <a href="#brands">Onze merken</a>
+            <a href="#ondernemers">Ondernemers</a>
           </li>
           <li>
-            <a href="#mensen">Onze mensen</a>
+            <a href="#martech">Martech</a>
           </li>
           <li>
             <a href="#perks">Werken bij</a>
           </li>
           <li>
+            <a href="#team">Ons team</a>
+          </li>
+          <li>
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <a href="#jobs" className="btn btn-gold">
-          Bekijk vacatures <span className="arr">→</span>
+        <a href="#jobs" className="btn btn-primary">
+          Vacatures
         </a>
       </div>
     </nav>

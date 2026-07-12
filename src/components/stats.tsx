@@ -1,28 +1,21 @@
+const stats = [
+  { num: "2", label: "merken: Kitchen4All en Sani4All" },
+  { num: "47", label: "winkels door heel Nederland" },
+  { num: "21", label: "specialisten, één club" },
+  { num: "9.000+", label: "keukens en badkamers per jaar" },
+];
+
 export function Stats() {
   return (
     <section className="stats">
       <div className="container">
         <div className="grid">
-          <div className="stat">
-            <div className="num">47</div>
-            <div className="lbl">showrooms bediend</div>
-          </div>
-          <div className="stat">
-            <div className="num">
-              9.000<span>+</span>
+          {stats.map((s, i) => (
+            <div key={s.label} className="stat" data-reveal={i}>
+              <div className="num">{s.num}</div>
+              <div className="lbl">{s.label}</div>
             </div>
-            <div className="lbl">keukens &amp; badkamers per jaar</div>
-          </div>
-          <div className="stat">
-            <div className="num">4</div>
-            <div className="lbl">teams, één club</div>
-          </div>
-          <div className="stat">
-            <div className="num">
-              1<span>u</span>
-            </div>
-            <div className="lbl">sport per week onder werktijd</div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ Dit is een **aparte repo**, los van `4all-web-platform` (de K4A/S4A monorepo). A
 - **Next.js 16** (App Router, RSC, statisch) + React 19
 - **Tailwind 4** (via PostCSS) — wordt bijna niet gebruikt; de site leunt op custom CSS in `globals.css`
 - **TypeScript** strict mode
-- Fonts via `next/font`: Bogart (lokaal, `public/fonts/`) + Lexend Deca (Google)
+- Fonts via `next/font`: Bogart (lokaal, `public/fonts/`) + Lexend Deca (Google) + Caveat (Google, script-accenten via `.hand`)
 - Geen tests, geen Storybook — opzettelijk simpel gehouden
 
 ## Deployment
@@ -29,18 +29,21 @@ src/
 │   ├── page.tsx                 # homepage (composeert alle secties)
 │   └── vacatures/[slug]/page.tsx # statisch gegenereerde vacature-detail pagina's
 ├── components/                  # één bestand per sectie
-│   ├── nav.tsx, hero.tsx, stats.tsx, about.tsx, brands.tsx,
-│   ├── culture-quote.tsx, values.tsx, perks.tsx,
-│   ├── team-collage.tsx, people.tsx, jobs.tsx, open-cta.tsx,
+│   ├── nav.tsx, hero.tsx, stats.tsx, about.tsx, ondernemers.tsx, martech.tsx,
+│   ├── brands.tsx, culture-quote.tsx, values.tsx, perks.tsx,
+│   ├── office.tsx, jobs.tsx, open-cta.tsx,
 │   ├── contact.tsx, footer.tsx
-│   └── smooth-scroll.tsx        # enige client component (anchor scroll)
+│   ├── people.tsx               # client component: per team een carrousel-rail met pijlknoppen
+│   ├── smooth-scroll.tsx        # client component (anchor scroll met nav-offset)
+│   └── reveal.tsx               # client component (scroll-reveal via IntersectionObserver)
 ├── data/
 │   ├── jobs.ts                  # vacatures + detail content (slug, summary, responsibilities, requirements)
-│   └── employees.ts             # 21 mensen in 5 teams — tijdelijk, wordt Payload-fetch
+│   └── employees.ts             # 21 mensen in 7 groepen — bron: "Wie doet wat bij 4All" (mei 2026), wordt Payload-fetch
 └── public/
     ├── fonts/                   # Bogart Semibold + Bold (.ttf)
-    ├── logos/                   # Rush, K4A, S4A logos
-    └── imagery/                 # 16 JPG's vanuit de Claude Design bundle
+    ├── logos/                   # Rush, K4A, S4A logos + zo-fijn-script.png (wit handschrift-element)
+    ├── imagery/                 # sfeerfoto's, rush-office-*.jpg (kantoor), rush-teamfoto.jpg
+    └── team/                    # 21 medewerkersportretten (geoptimaliseerd, max 900px)
 ```
 
 ## Huisstijl
@@ -67,13 +70,18 @@ Warm, helder en menselijk. **Geen em-dashes** (—). Gebruik punt, komma of dubb
 
 **Je/jij, nooit u.** Informele toon, afkortingen (`'t`, `z'n`) mogen. Sentence case voor headings.
 
+**Twee doelgroepen.** De site is primair employer branding (hires), maar de ondernemers van K4A/S4A lezen mee: de `ondernemers.tsx` sectie ("Retail kan anders") is voor hen. Toon daar: wij staan voor de ondernemers klaar, lokaal wint van landelijk, data op de werkvloer. Bron voor deze content: `/Users/stefbosgoed/Documents/LinkedIn/` (contentstrategie + posts).
+
+**Geen cursief in koppen.** Bogart heeft geen echte italic; `em` in koppen kleurt goud maar blijft rechtop (`font-style: normal` in globals.css).
+
 ## Design patterns
 
 - **Afbeeldingen**: altijd `next/image`, nooit raw `<img>` (ESLint `@next/next/no-img-element` blokkeert dit)
 - **Interne links**: altijd `next/link`, niet `<a>` voor interne routes
 - **Anchor links** (`href="#section"`): `<a>` is oké. SmoothScroll component vangt ze af en scrollt met offset voor de fixed nav.
-- **CSS-centric**: alle styling in `globals.css` met BEM-achtige class-namen (`.hero`, `.hero .photo-stack .p.a`). Geen Tailwind utilities in JSX op een paar uitzonderingen na.
-- **Responsive breakpoint**: 960px (single media query in `globals.css`). Alles erboven = desktop, alles eronder = mobiel stacked.
+- **CSS-centric**: alle styling in `globals.css` met BEM-achtige class-namen (`.hero`, `.people .card .overlay`). Geen Tailwind utilities in JSX op een paar uitzonderingen na.
+- **Responsive breakpoints**: 960px (hoofdbreekpunt, mobiel stacked) + 560px (brede grids naar 1 kolom) in `globals.css`.
+- **Scroll-reveal**: zet `data-reveal` (of `data-reveal="1..3"` voor stagger-delay) op een element; `reveal.tsx` voegt `.in` toe zodra het in beeld komt. Respecteert `prefers-reduced-motion`.
 
 ## Data model
 
@@ -89,14 +97,14 @@ type Job = {
   requirements: string[];       // "Wat breng je mee?"
 };
 ```
-Content is **placeholder-niveau in Rush voice** — geschreven zonder bronmateriaal, klaar voor het content/recruitmentteam om te finetunen.
+Vacatures komen uit **"Wie doet wat bij 4All" (mei 2026)**, sectie "Openstaande plekken". Teksten zijn in Rush voice, klaar voor het content/recruitmentteam om te finetunen.
 
 ### `employees.ts` (tijdelijk)
 ```ts
-type Team = { slug, name, description, count };
-type Employee = { name, role, teamSlug, initials, isLead?, avatarUrl? };
+type Team = { slug, name, description, openRoles };
+type Employee = { name, role, teamSlug, bio, callFor, avatarUrl, isLead? };
 ```
-Dit wordt Payload (`Employees` collection in `4all-web-platform/apps/admin`). Zie **Roadmap**.
+`bio` en `callFor` ("Bel voor: …") komen uit "Wie doet wat bij 4All" en verschijnen als hover-overlay op de foto-cards in de people-sectie. Dit wordt Payload (`Employees` collection in `4all-web-platform/apps/admin`). Zie **Roadmap**.
 
 ## Routes
 
