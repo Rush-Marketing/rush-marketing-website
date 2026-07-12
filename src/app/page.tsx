@@ -17,6 +17,7 @@ import { Reveal } from "@/components/reveal";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Stats } from "@/components/stats";
 import { Values } from "@/components/values";
+import { Winkelkaart } from "@/components/winkelkaart";
 
 export default function HomePage() {
   return (
@@ -31,6 +32,7 @@ export default function HomePage() {
       <Ondernemers />
       <Martech />
       <Brands />
+      <Winkelkaart />
       <Values />
       <Perks />
       <Office />
