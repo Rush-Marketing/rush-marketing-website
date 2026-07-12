@@ -136,8 +136,8 @@ export const employees: Employee[] = [
     name: "Isabelle Janssen",
     role: "Content marketeer",
     teamSlug: "merk-content",
-    bio: "Schrijft, denkt mee en zorgt dat onze pagina's vindbaar zijn.",
-    callFor: "Content-vragen, redactiewerk en SEO-content.",
+    bio: "Schrijft, denkt mee en bewaakt de redactionele lijn van onze merken.",
+    callFor: "Content-vragen, redactiewerk en de contentplanning.",
     avatarUrl: "/team/isabelle-janssen.jpg",
   },
   {
