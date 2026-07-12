@@ -1,18 +1,13 @@
 import Image from "next/image";
 
+import { HeroBackground } from "@/components/hero-background";
 import { jobs } from "@/data/jobs";
 
 export function Hero() {
   return (
     <header className="hero" id="top">
       <div className="bg" aria-hidden="true">
-        <Image
-          src="/imagery/rush-office-tafel.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          priority
-        />
+        <HeroBackground />
       </div>
       <div className="container inner">
         <p className="kicker" data-reveal>
@@ -42,6 +37,9 @@ export function Hero() {
         </div>
       </div>
       <span className="caption">Ons kantoor · Raadhuisstraat, Doetinchem</span>
+      <a href="#about" className="scroll-cue" aria-label="Scroll naar beneden">
+        <span className="chevron" />
+      </a>
     </header>
   );
 }
