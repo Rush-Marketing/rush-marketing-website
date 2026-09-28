@@ -126,7 +126,7 @@ export const employees: Employee[] = [
   },
   {
     name: "Inge Heiltjes",
-    role: "Grafisch vormgever",
+    role: "Lead design",
     teamSlug: "merk-content",
     bio: "Onze maker. Geef haar een briefing en je krijgt werk dat klopt.",
     callFor: "Ontwerp, winkelmateriaal, campagne-uitingen en drukwerk.",
