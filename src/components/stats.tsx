@@ -1,7 +1,7 @@
 const stats = [
   { num: "2", label: "merken: Kitchen4All en Sani4All" },
   { num: "47", label: "winkels door heel Nederland" },
-  { num: "21", label: "specialisten, één club" },
+  { num: "20", label: "specialisten, één club" },
   { num: "9.000+", label: "keukens en badkamers per jaar" },
 ];
 
