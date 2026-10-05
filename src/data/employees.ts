@@ -256,14 +256,6 @@ export const employees: Employee[] = [
 
   // Formulemanagement
   {
-    name: "Olav Versteeg",
-    role: "Formulemanager Sani4All",
-    teamSlug: "formulemanagement",
-    bio: "Houdt het Sani4All format op koers.",
-    callFor: "S4A-formule, collectie, winkelpresentatie en S4A-leveranciers.",
-    avatarUrl: "/team/olav-versteeg.jpg",
-  },
-  {
     name: "Tjerk Wiggers",
     role: "Franchise Performance Manager K4A",
     teamSlug: "formulemanagement",

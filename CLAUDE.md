@@ -38,12 +38,12 @@ src/
 │   └── reveal.tsx               # client component (scroll-reveal via IntersectionObserver)
 ├── data/
 │   ├── jobs.ts                  # vacatures + detail content (slug, summary, responsibilities, requirements)
-│   └── employees.ts             # 21 mensen in 7 groepen — bron: "Wie doet wat bij 4All" (mei 2026), wordt Payload-fetch
+│   └── employees.ts             # 20 mensen in 7 groepen — bron: "Wie doet wat bij 4All" (mei 2026), wordt Payload-fetch
 └── public/
     ├── fonts/                   # Bogart Semibold + Bold (.ttf)
     ├── logos/                   # Rush, K4A, S4A logos + zo-fijn-script.png (wit handschrift-element)
     ├── imagery/                 # sfeerfoto's, rush-office-*.jpg (kantoor), rush-teamfoto.jpg
-    └── team/                    # 21 medewerkersportretten (geoptimaliseerd, max 900px)
+    └── team/                    # 20 medewerkersportretten (geoptimaliseerd, max 900px)
 ```
 
 ## Huisstijl
