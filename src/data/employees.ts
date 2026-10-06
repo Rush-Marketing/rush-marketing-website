@@ -246,6 +246,14 @@ export const employees: Employee[] = [
     isLead: true,
   },
   {
+    name: "Bas Prinsen",
+    role: "Product Owner",
+    teamSlug: "tech-innovatie",
+    bio: "Onze bouwer. Zorgt dat de websites van K4A en S4A doen wat ze moeten doen.",
+    callFor: "Website-vragen, techniek en data.",
+    avatarUrl: "/team/bas-prinsen.jpg",
+  },
+  {
     name: "Arend van der Pauw",
     role: "Data engineer",
     teamSlug: "tech-innovatie",
