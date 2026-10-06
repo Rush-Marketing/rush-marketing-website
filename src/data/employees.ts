@@ -191,7 +191,7 @@ export const employees: Employee[] = [
     teamSlug: "franchise-activatie",
     bio: "De brug tussen het Servicekantoor en de winkels.",
     callFor: "Franchise-vragen, lokale activatie en opening van nieuwe winkels.",
-    avatarUrl: "/team/rik-buitelaar.jpg",
+    avatarUrl: "/team/rik-buitelaar-2026.jpg",
     isLead: true,
   },
   {
