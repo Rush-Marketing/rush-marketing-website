@@ -51,14 +51,14 @@ export const teams: Team[] = [
     name: "Merk & Content",
     description:
       "Van concept tot campagne, van vormgeving tot copy. Zij bouwen het verhaal van onze merken.",
-    openRoles: 1,
+    openRoles: 0,
   },
   {
     slug: "performance-groei",
     name: "Performance & Groei",
     description:
       "SEO, SEA, automation en alles wat online groei mogelijk maakt. Waar data en creativiteit elkaar raken.",
-    openRoles: 3,
+    openRoles: 2,
   },
   {
     slug: "franchise-activatie",

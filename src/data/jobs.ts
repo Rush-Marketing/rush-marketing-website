@@ -17,46 +17,6 @@ export type Job = {
  */
 export const jobs: Job[] = [
   {
-    slug: "content-marketeer",
-    title: "Content Marketeer",
-    status: "Open",
-    team: "Merk & Content",
-    summary:
-      "Schrijf en maak content die klanten écht helpt. Van blog tot videoscript, altijd in onze warme, heldere toon.",
-    responsibilities: [
-      "Schrijven en redigeren van content voor Kitchen4All en Sani4All",
-      "Samenwerken met SEO voor vindbare content en met design voor beeld",
-      "Interviews met klanten en franchisepartners om verhalen op te halen",
-      "Content kalender beheren en planning bewaken",
-    ],
-    requirements: [
-      "Sterke pen, kan in de tone of voice van beide merken schrijven",
-      "SEO-basis (zoekwoorden, structuur, meta's)",
-      "Oog voor detail, nuchter gevoel voor merk",
-      "Werkt goed samen met vormgever en marketeers",
-    ],
-  },
-  {
-    slug: "marketing-automation-specialist",
-    title: "Marketing Automation Specialist",
-    status: "Open",
-    team: "Performance & Groei",
-    summary:
-      "Bouw flows die van leads klanten maken en van klanten fans. E-mail, CRM en alle touchpoints daartussen.",
-    responsibilities: [
-      "Opzetten en optimaliseren van marketing automation flows (e-mail, SMS, CRM)",
-      "Segmentatie en personalisatie op klantdata",
-      "Samenwerken met SEO, SEA en content om leads goed te vervolgen",
-      "Meten wat werkt, bijsturen wat niet werkt",
-    ],
-    requirements: [
-      "Ervaring met een marketing automation platform (bv. ActiveCampaign, Klaviyo, HubSpot)",
-      "Basisbegrip van HTML/CSS voor e-mail templates",
-      "Analytisch sterk, kan een conversiefunnel lezen",
-      "Denkt in klantreizen, niet in losse campagnes",
-    ],
-  },
-  {
     slug: "ads-specialist",
     title: "Ads Specialist",
     status: "Open",
