@@ -116,6 +116,30 @@ export const jobs: Job[] = [
       "Reist graag: je bent regelmatig bij de winkels te vinden",
     ],
   },
+  {
+    slug: "category-manager-sanitair",
+    title: "Category Manager Sanitair",
+    status: "Nieuw",
+    team: "Formulemanagement",
+    summary:
+      "Word jij de spil achter ons badkamerassortiment? Als Category Manager Sanitair bepaal jij wat er in de Sani4All-winkels staat en hangt. Je bent de schakel tussen scherpe inkoop en een aantrekkelijk aanbod op de winkelvloer.",
+    responsibilities: [
+      "Je stelt ons standaardassortiment samen: van badkamers en toiletten tot kranen, meubels en tegels. Elk jaar kijk je opnieuw wat blijft, wat weggaat en wat erbij komt.",
+      "Je vertaalt goede inkoopafspraken naar de winkel: welk product, tegen welke prijs, en hoe we het mooi presenteren en verkopen.",
+      "Je duikt in de cijfers: welke producten lopen goed, waar zit de marge, en waar kunnen we slimmer inkopen.",
+      "Je brengt nieuwe thema's naar de winkels, denk aan een waterontharder, een douchetoilet of een nieuwe meubellijn, en zorgt dat ze goed landen op de vloer.",
+      "Je komt regelmatig in de winkels om te zien hoe het assortiment werkt en wat ondernemers nodig hebben.",
+      "Je houdt onze productinformatie netjes op orde, zodat elke winkel met de juiste producten en prijzen werkt.",
+    ],
+    requirements: [
+      "Ervaring met assortiment, inkoop of productmanagement, het liefst in sanitair, interieur, bouw of een vergelijkbare retail- of groothandelswereld.",
+      "Je bent sterk met cijfers en houdt van orde. Je vindt het juist leuk om data en productinformatie kloppend te krijgen.",
+      "Je schakelt makkelijk tussen collega's, winkels en leveranciers, en krijgt mensen mee in je keuzes.",
+      "Je pakt je vak als eigenaar op: je wacht niet af, je zorgt dat het staat.",
+      "Affiniteit met badkamers en interieur, en gevoel voor wat een klant mooi vindt.",
+      "HBO werk- en denkniveau.",
+    ],
+  },
 ];
 
 export function jobBySlug(slug: string): Job | undefined {

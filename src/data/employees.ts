@@ -79,7 +79,7 @@ export const teams: Team[] = [
     name: "Formulemanagement",
     description:
       "Collectie, presentatie en samenwerking met winkels per formule. Van strategie naar wat er in de winkel ligt en hangt.",
-    openRoles: 1,
+    openRoles: 2,
   },
 ];
 
