@@ -141,14 +141,6 @@ export const employees: Employee[] = [
     avatarUrl: "/team/isabelle-janssen.jpg",
   },
   {
-    name: "Zara Jansen",
-    role: "Content marketeer",
-    teamSlug: "merk-content",
-    bio: "Specialiteit: pakkende stories die winkels in beweging brengen.",
-    callFor: "Verhalen achter ondernemers, sfeercontent en samenwerking met winkels.",
-    avatarUrl: "/team/zara-jansen.jpg",
-  },
-  {
     name: "Patty Wezendonk",
     role: "Marketeer lokale support",
     teamSlug: "merk-content",
