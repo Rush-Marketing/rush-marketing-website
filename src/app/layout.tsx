@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   title: "Rush Marketing · Zo fijn kan 't zijn.",
   description:
     "Rush Marketing is het team van marketing, tech en data achter Kitchen4All en Sani4All. We staan elke dag klaar voor 47 winkels en de ondernemers erachter.",
-  icons: {
-    icon: "/favicon.png",
-  },
   openGraph: {
     title: "Rush Marketing · Zo fijn kan 't zijn.",
     description:
