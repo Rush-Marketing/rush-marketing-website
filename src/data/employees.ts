@@ -190,8 +190,8 @@ export const employees: Employee[] = [
     name: "Pascal Reulink",
     role: "Retail Specialist",
     teamSlug: "franchise-activatie",
-    bio: "Onze verbouwman. Pakt verbouwingen van A tot Z.",
-    callFor: "Verbouwingen, signing in de winkel en leveranciers voor de bouw.",
+    bio: "Onze specialist in winkelbeleving en retailactivatie. Verbindt formule, marketing en winkelvloer.",
+    callFor: "Winkeloptimalisatie, instore marketing, retailactivatie, winkeluitstraling en (ver)bouwprojecten.",
     avatarUrl: "/team/pascal-reulink.jpg",
   },
   {
