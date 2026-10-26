@@ -211,14 +211,6 @@ export const employees: Employee[] = [
     avatarUrl: "/team/fleur-kelderman.jpg",
   },
   {
-    name: "Kirsten Thijssen",
-    role: "Franchise coördinator",
-    teamSlug: "franchise-activatie",
-    bio: "Schakelt met ondernemers en bewaakt afspraken.",
-    callFor: "Ondernemers-vragen, telefonie-traject en dagelijkse coördinatie.",
-    avatarUrl: "/team/kirsten-thijssen.jpg",
-  },
-  {
     name: "Charelle van Amerongen",
     role: "Klantenservice medewerker",
     teamSlug: "franchise-activatie",
