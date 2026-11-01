@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rush-marketing-website.vercel.app"),
   title: "Rush Marketing · Zo fijn kan 't zijn.",
   description:
-    "Rush Marketing is het team van marketing, tech en data achter Kitchen4All en Sani4All. We staan elke dag klaar voor 47 winkels en de ondernemers erachter.",
+    "Rush Marketing is het team van marketing, tech en data achter Kitchen4All en Sani4All. We staan elke dag klaar voor 49 winkels en de ondernemers erachter.",
   openGraph: {
     title: "Rush Marketing · Zo fijn kan 't zijn.",
     description:
-      "De marketing, tech en data achter Kitchen4All en Sani4All. Eén club, 47 winkels, en ruimte voor meer.",
+      "De marketing, tech en data achter Kitchen4All en Sani4All. Eén club, 49 winkels, en ruimte voor meer.",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
     locale: "nl_NL",
     type: "website",

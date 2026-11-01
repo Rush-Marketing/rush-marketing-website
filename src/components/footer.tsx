@@ -10,7 +10,7 @@ export function Footer() {
               <Image src="/logos/rush-marketing-circle.png" alt="" width={48} height={48} />
               <b>Rush Marketing</b>
             </a>
-            <p>De marketing achter Kitchen4All en Sani4All. Betrokken, inventief, ambitieus, energiek.</p>
+            <p>De marketing achter Kitchen4All en Sani4All. Echt ontzorgen, samen dichtbij, steeds slimmer.</p>
           </div>
           <div className="col">
             <b>Onze merken</b>

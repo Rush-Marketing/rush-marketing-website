@@ -22,7 +22,7 @@ export const jobs: Job[] = [
     status: "Open",
     team: "Performance & Groei",
     summary:
-      "Draai campagnes voor 47 showrooms met focus op kwaliteit, niet op klikvolume. Elke euro mag iets opleveren.",
+      "Draai campagnes voor 49 winkels met focus op kwaliteit, niet op klikvolume. Elke euro mag iets opleveren.",
     responsibilities: [
       "Opzetten en optimaliseren van Google Ads en Meta Ads campagnes",
       "Samenwerken met SEO en content aan landingspagina's die converteren",
@@ -42,7 +42,7 @@ export const jobs: Job[] = [
     status: "Open",
     team: "Performance & Groei",
     summary:
-      "Vertaal data uit onze showrooms, webshops en campagnes naar inzichten waar de organisatie mee kan sturen.",
+      "Vertaal data uit onze winkels, webshops en campagnes naar inzichten waar de organisatie mee kan sturen.",
     responsibilities: [
       "Bouwen en onderhouden van dashboards voor directie, teams en winkels",
       "Ad-hoc analyses voor formulemanagement, marketing en franchisepartners",

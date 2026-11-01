@@ -16,7 +16,7 @@ export function About() {
             </h2>
             <p className="lede" data-reveal="2">
               Rush Marketing is het team achter Kitchen4All en Sani4All. We werken dagelijks voor
-              20 Kitchen4All en 27 Sani4All winkels, vanuit één kantoor in Doetinchem.
+              20 Kitchen4All- en 29 Sani4All-winkels, vanuit één kantoor in Doetinchem.
             </p>
             <div className="body" data-reveal="3">
               <p>

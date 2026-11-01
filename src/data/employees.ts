@@ -64,7 +64,7 @@ export const teams: Team[] = [
     slug: "franchise-activatie",
     name: "Franchise & Lokale Activatie",
     description:
-      "De brug tussen het Servicekantoor en 47 winkels. Van verbouwing tot opening tot klantenservice.",
+      "De brug tussen het Servicekantoor en 49 winkels. Van verbouwing tot opening tot klantenservice.",
     openRoles: 0,
   },
   {

@@ -16,7 +16,7 @@ const brands = [
     display: "sani4all.nl",
     image: "/imagery/sani4all-hero.jpg",
     logo: "/logos/sani4all-logo.png",
-    facts: "27 winkels · 6.000+ badkamers per jaar",
+    facts: "29 winkels · 6.000+ badkamers per jaar",
     body: "De badkamerfranchise die het begrijpelijk en betaalbaar maakt. Advies van mensen die hun vak verstaan, geen trucjes, gewoon eerlijk.",
   },
 ];

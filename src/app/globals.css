@@ -888,7 +888,7 @@ a {
 }
 
 /* ============================================================
-   Winkelkaart (47 winkels op de kaart)
+   Winkelkaart (alle winkels op de kaart)
    ============================================================ */
 
 .winkelkaart {
@@ -1047,7 +1047,7 @@ a {
 
 .values .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -1065,7 +1065,16 @@ a {
 
 .values h3 {
   font-size: 24px;
-  margin: 14px 0 12px;
+  margin: 0 0 8px;
+}
+
+.values .motto {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
 }
 
 .values .value p {

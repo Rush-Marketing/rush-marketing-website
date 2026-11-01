@@ -18,7 +18,7 @@ type EngineNode = {
 const NODES: EngineNode[] = [
   {
     id: "winkels",
-    title: "47 winkels",
+    title: "49 winkels",
     tag: "De bron",
     desc: "Elke winkel levert data: bezoek, offertes, verkoop. Realtime binnen bij ons.",
     d: { x: 8, y: 50 },

@@ -1,23 +1,18 @@
 const values = [
   {
-    num: "01",
-    title: "Betrokken",
-    body: "Echt contact met de winkels en de mensen erachter. Niet van bovenaf sturen, maar naast ze staan. We luisteren goed en bouwen aan relaties voor de lange termijn.",
+    title: "Echt ontzorgen",
+    motto: "Underpromise, overdeliver. Mikken op een 9+.",
+    body: "We doen wat we beloven, denken vooruit en nemen eigenaarschap. We spreken een plan af en houden ons eraan. Niet omdat het moet, maar omdat we het de ondernemers gunnen.",
   },
   {
-    num: "02",
-    title: "Inventief",
-    body: "Technologie inzetten waar het zinvol is. Strategisch, met een creatieve twist. Minder ruis, meer effect: we combineren creativiteit, tech en data.",
+    title: "Samen dichtbij",
+    motto: "Dichtbij als voorwaarde.",
+    body: "We kennen de ondernemers persoonlijk en weten wat er speelt. We zijn benaderbaar en gelijkwaardig, vragen en bieden hulp, ook tussen teams. En we zeggen het eerlijk als iets niet kan.",
   },
   {
-    num: "03",
-    title: "Ambitieus",
-    body: "Geen marketing om de marketing, maar meetbare waarde op de vloer. We doen wat werkt, met focus op concrete resultaten voor de winkels.",
-  },
-  {
-    num: "04",
-    title: "Energiek",
-    body: "Plezier in samenwerken, enthousiasme en vertrouwen. Een club die het samen doet, met loyaliteit en een vleugje humor. Die energie werkt aanstekelijk.",
+    title: "Steeds slimmer",
+    motto: "Start before you're ready.",
+    body: "Het hoeft niet perfect: gewoon doen en gaan. We maken het snel concreet, proberen het uit en kijken of het werkt. Nieuwsgierigheid is de motor, techniek de versneller en nooit het doel.",
   },
 ];
 
@@ -27,23 +22,24 @@ export function Values() {
       <div className="container">
         <div className="section-intro">
           <span className="hand" data-reveal>
-            Onze waarden
+            Onze kernwaarden
           </span>
           <h2 data-reveal="1">
-            Vier waarden die
+            Fijn om
             <br />
-            je écht <em>voelt</em>.
+            erbij te <em>zijn</em>.
           </h2>
           <p data-reveal="2">
-            Geen posters aan de muur. Met het hele team hebben we vastgesteld hoe we met elkaar en
-            met onze franchisepartners willen werken. Dit stuurt sindsdien alles.
+            Dat moet een ondernemer, een collega en een klant voelen als ze met Rush werken. Met MT
+            en directie hebben we drie kernwaarden vastgesteld. Ze sturen hoe we werken,
+            samenwerken en groeien.
           </p>
         </div>
         <div className="grid">
           {values.map((v, i) => (
-            <div key={v.num} className="value" data-reveal={i}>
-              <span className="num">{v.num}</span>
+            <div key={v.title} className="value" data-reveal={i}>
               <h3>{v.title}</h3>
+              <span className="motto">{v.motto}</span>
               <p>{v.body}</p>
             </div>
           ))}

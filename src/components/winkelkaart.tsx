@@ -21,7 +21,7 @@ export function Winkelkaart() {
               Waar we werken
             </span>
             <h2 data-reveal="1">
-              47 winkels,
+              {STORES.length} winkels,
               <br />
               door heel <em>Nederland</em>.
             </h2>
@@ -43,7 +43,7 @@ export function Winkelkaart() {
             <svg
               viewBox={NL_VIEWBOX}
               role="img"
-              aria-label="Kaart van Nederland met de 47 winkels van Kitchen4All en Sani4All"
+              aria-label={`Kaart van Nederland met de ${STORES.length} winkels van Kitchen4All en Sani4All`}
             >
               <g className="land">
                 {NL_LAND.map((d, i) => (

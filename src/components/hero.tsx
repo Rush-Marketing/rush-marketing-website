@@ -25,7 +25,7 @@ export function Hero() {
         </h1>
         <p className="sub" data-reveal="2">
           Wij zijn het team van marketing, tech en data achter Kitchen4All en Sani4All. Eén club
-          die elke dag klaarstaat voor 47 winkels en een stel hele fijne ondernemers.
+          die elke dag klaarstaat voor 49 winkels en een stel hele fijne ondernemers.
         </p>
         <div className="ctas" data-reveal="3">
           <a href="#jobs" className="btn btn-light">

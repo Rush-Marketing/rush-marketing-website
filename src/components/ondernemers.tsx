@@ -31,7 +31,7 @@ export function Ondernemers() {
             Dat bewijzen we <em>samen</em>.
           </h2>
           <p data-reveal="2">
-            De 47 winkels van Kitchen4All en Sani4All worden gerund door ondernemers die met
+            De 49 winkels van Kitchen4All en Sani4All worden gerund door ondernemers die met
             passie hun zaak draaien. Zij staan elke dag voor hun klanten. Wij staan elke dag voor
             hen. Minder traditioneel, moderner, en altijd met de winkel als vertrekpunt.
           </p>
