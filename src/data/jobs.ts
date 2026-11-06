@@ -8,6 +8,10 @@ export type Job = {
   summary: string;
   responsibilities: string[];
   requirements: string[];
+  /** Mailadres voor sollicitaties; zonder dit veld gaat het naar info@rushmarketing.nl. */
+  contactEmail?: string;
+  /** Optionele sfeerfoto onder de kop, uit public/imagery. */
+  image?: { src: string; alt: string; caption: string };
 };
 
 /**
@@ -139,6 +143,37 @@ export const jobs: Job[] = [
       "Affiniteit met badkamers en interieur, en gevoel voor wat een klant mooi vindt.",
       "HBO werk- en denkniveau.",
     ],
+  },
+  {
+    slug: "werkvoorbereider-winkelopeningen",
+    title: "Werkvoorbereider winkelopeningen",
+    status: "Nieuw",
+    team: "Franchise & Lokale Activatie",
+    summary:
+      "Volgend jaar openen we tien nieuwe winkels. Jij zet het ontwerp van onze interieurontwerper om in tekeningen en een pakket waar elke bouwpartner direct mee aan de slag kan. Als zzp'er voor twee tot drie dagen per week, vast kan ook. Start zo snel mogelijk.",
+    responsibilities: [
+      "Je werkt het ontwerp van onze interieurontwerper uit tot technische tekeningen: maatvoering, wanden en plafonds, het tegelplan en de punten voor stroom, water, afvoer en verlichting.",
+      "Je maakt per bouwpartner een compleet pakket: tekeningen, uitvraag, hoeveelheden en de volgorde waarin iedereen aan de slag gaat.",
+      "Je toetst offertes technisch. Klopt wat een partner aanbiedt met wat we hebben gevraagd?",
+      "Je levert op tijd de bestellijst voor de winkelinrichting, van tegels tot spiegels, kranen en meubels. Die gaat zo'n drie maanden voor de opening de deur uit.",
+      "Tijdens de bouw ben jij het aanspreekpunt voor technische vragen van partners. Op vaste momenten kom je kijken: bij de start, op de momenten die ertoe doen en bij de oplevering.",
+      "Na elke opening maak je ons standaardpakket beter, zodat de volgende winkel sneller en soepeler gaat.",
+    ],
+    requirements: [
+      "Een paar jaar ervaring als werkvoorbereider in de winkel-, interieur- of utiliteitsbouw.",
+      "Je tekent vlot in AutoCAD of een vergelijkbaar pakket dat met DWG werkt, en leest bouwkundige en installatietekeningen zonder moeite.",
+      "Je kent de raakvlakken tussen bouw, installatie en afbouw. Je ziet een probleem op papier, voordat het op de bouw ontstaat.",
+      "Je werkt graag samen met een ontwerper. Je werkt haar ontwerp uit, je tekent het niet over.",
+      "Je houdt het overzicht over meerdere winkels tegelijk, nauwkeurig en georganiseerd.",
+      "Je bent nieuwsgierig naar slimme tools en AI die je werk sneller maken.",
+      "Je hebt rijbewijs B, want onze winkels staan door heel Nederland.",
+    ],
+    contactEmail: "lamcodevries@sani4all.nl",
+    image: {
+      src: "/imagery/sani4all-apeldoorn.jpg",
+      alt: "Interieur van Sani4All Apeldoorn: een lange looproute langs complete badkamers met een vrijstaand bad en een marmeren wand",
+      caption: "Sani4All Apeldoorn. Zo ziet een winkel eruit als alles klopt.",
+    },
   },
 ];
 

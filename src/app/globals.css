@@ -1717,6 +1717,27 @@ footer .bottom a:hover {
   color: #fff;
 }
 
+.job-photo {
+  margin: 0;
+  background: linear-gradient(var(--cream) 50%, transparent 50%);
+}
+
+.job-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center 60%;
+  border-radius: 22px;
+}
+
+.job-photo figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
 .job-body {
   padding: 72px 0 96px;
 }
@@ -2002,6 +2023,10 @@ footer .bottom a:hover {
 
   .job-body .aside {
     position: static;
+  }
+
+  .job-photo img {
+    aspect-ratio: 4 / 3;
   }
 }
 
