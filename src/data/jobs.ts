@@ -150,7 +150,7 @@ export const jobs: Job[] = [
     status: "Nieuw",
     team: "Franchise & Lokale Activatie",
     summary:
-      "Volgend jaar openen we tien nieuwe winkels. Jij zet het ontwerp van onze interieurontwerper om in tekeningen en een pakket waar elke bouwpartner direct mee aan de slag kan. Als zzp'er voor twee tot drie dagen per week, vast kan ook. Start zo snel mogelijk.",
+      "Tien nieuwe winkels in één jaar. Word jij de werkvoorbereider die van elk ontwerp een plan maakt waar iedere bouwpartner direct mee aan de slag kan? Dan opent elke winkel op tijd en zonder gedoe, en zie jij jouw werk straks terug van Amersfoort tot Drachten. Als zzp'er voor twee tot drie dagen per week, vast kan ook. Start zo snel mogelijk.",
     responsibilities: [
       "Je werkt het ontwerp van onze interieurontwerper uit tot technische tekeningen: maatvoering, wanden en plafonds, het tegelplan en de punten voor stroom, water, afvoer en verlichting.",
       "Je maakt per bouwpartner een compleet pakket: tekeningen, uitvraag, hoeveelheden en de volgorde waarin iedereen aan de slag gaat.",
