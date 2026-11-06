@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { notFound } from "next/navigation";
 
@@ -57,6 +58,22 @@ export default async function JobPage({ params }: PageProps) {
           </div>
         </div>
       </header>
+
+      {job.image && (
+        <figure className="job-photo">
+          <div className="container">
+            <Image
+              src={job.image.src}
+              alt={job.image.alt}
+              width={1800}
+              height={1200}
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              priority
+            />
+            <figcaption>{job.image.caption}</figcaption>
+          </div>
+        </figure>
+      )}
 
       <section className="job-body">
         <div className="container">

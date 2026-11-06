@@ -10,6 +10,8 @@ export type Job = {
   requirements: string[];
   /** Mailadres voor sollicitaties; zonder dit veld gaat het naar info@rushmarketing.nl. */
   contactEmail?: string;
+  /** Optionele sfeerfoto onder de kop, uit public/imagery. */
+  image?: { src: string; alt: string; caption: string };
 };
 
 /**
@@ -167,6 +169,11 @@ export const jobs: Job[] = [
       "Je hebt rijbewijs B, want onze winkels staan door heel Nederland.",
     ],
     contactEmail: "lamcodevries@sani4all.nl",
+    image: {
+      src: "/imagery/sani4all-apeldoorn.jpg",
+      alt: "Interieur van Sani4All Apeldoorn: een lange looproute langs complete badkamers met een vrijstaand bad en een marmeren wand",
+      caption: "Sani4All Apeldoorn. Zo ziet een winkel eruit als alles klopt.",
+    },
   },
 ];
 
