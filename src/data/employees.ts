@@ -175,6 +175,14 @@ export const employees: Employee[] = [
     callFor: "Google Ads, Meta Ads, campagne-instellingen en A/B-tests.",
     avatarUrl: "/team/marc-van-der-meulen.jpg",
   },
+  {
+    name: "Nordin Verwey",
+    role: "Marketing Automation Specialist",
+    teamSlug: "performance-groei",
+    bio: "Laat alle flows flowen, vooral die van onze e-mails. Denk aan magazine-mails, de 3D-tool en afspraakbevestigingen.",
+    callFor: "Alles rond onze e-mails. Foutje gezien? Foto onjuist? Nordin helpt je verder.",
+    avatarUrl: "/team/nordin-verwey.jpg",
+  },
 
   // Franchise & Lokale Activatie
   {
