@@ -17,7 +17,6 @@ export type Team = {
   slug: TeamSlug;
   name: string;
   description: string;
-  openRoles: number;
 };
 
 export type Employee = {
@@ -28,7 +27,8 @@ export type Employee = {
   bio: string;
   /** Waarvoor je deze collega belt. */
   callFor: string;
-  avatarUrl: string;
+  /** Zonder foto tonen we een tegel met initialen. */
+  avatarUrl?: string;
   isLead?: boolean;
 };
 
@@ -38,48 +38,41 @@ export const teams: Team[] = [
     name: "Directie",
     description:
       "Strategie, groei en koers over beide formules. Zij houden richting en rekening.",
-    openRoles: 0,
   },
   {
     slug: "finance",
     name: "Finance",
     description: "Elke euro in beeld. Van maandcijfers tot cashflow, strak en helder.",
-    openRoles: 0,
   },
   {
     slug: "merk-content",
     name: "Merk & Content",
     description:
       "Van concept tot campagne, van vormgeving tot copy. Zij bouwen het verhaal van onze merken.",
-    openRoles: 0,
   },
   {
     slug: "performance-groei",
     name: "Performance & Groei",
     description:
       "SEO, SEA, automation en alles wat online groei mogelijk maakt. Waar data en creativiteit elkaar raken.",
-    openRoles: 2,
   },
   {
     slug: "franchise-activatie",
     name: "Franchise & Lokale Activatie",
     description:
       "De brug tussen het Servicekantoor en 49 winkels. Van verbouwing tot opening tot klantenservice.",
-    openRoles: 0,
   },
   {
     slug: "tech-innovatie",
     name: "Tech & Innovatie",
     description:
       "Het 4All Platform, data en tooling. Zij zorgen dat techniek doet waar het goed in is: dingen makkelijker maken.",
-    openRoles: 2,
   },
   {
     slug: "formulemanagement",
     name: "Formulemanagement",
     description:
       "Collectie, presentatie en samenwerking met winkels per formule. Van strategie naar wat er in de winkel ligt en hangt.",
-    openRoles: 2,
   },
 ];
 
@@ -147,6 +140,22 @@ export const employees: Employee[] = [
     bio: "Lokale marketingsupport voor leden, en trekker van onze employer branding.",
     callFor: "Lokale marketingsupport, maatwerkverzoeken en employer branding.",
     avatarUrl: "/team/patty-wezendonk.jpg",
+  },
+  {
+    name: "Liza Yeung",
+    role: "Marketing Coördinator",
+    teamSlug: "merk-content",
+    bio: "Houdt het overzicht over campagnes, planning en beeld. Zorgt dat alles op tijd klaarstaat.",
+    callFor: "Campagneplanning, fotografie en afstemming met team Merk & Content.",
+    avatarUrl: "/team/liza-yeung.jpg",
+  },
+  {
+    name: "Jasper van Alst",
+    role: "Content marketeer",
+    teamSlug: "merk-content",
+    bio: "Maakt de content waarmee onze merken elke week zichtbaar zijn, van socials tot campagne.",
+    callFor: "Socials, content en campagnes.",
+    avatarUrl: "/team/jasper-van-alst.jpg",
   },
 
   // Performance & Groei

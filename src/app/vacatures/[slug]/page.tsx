@@ -31,6 +31,7 @@ export default async function JobPage({ params }: PageProps) {
   const job = jobBySlug(slug);
   if (!job) notFound();
 
+  const filled = job.status === "Vervuld";
   const mailSubject = encodeURIComponent(`Sollicitatie: ${job.title}`);
   const mailBody = encodeURIComponent(
     `Hoi Rush Marketing,\n\nIk reageer graag op de vacature "${job.title}".\n\n`,
@@ -50,7 +51,9 @@ export default async function JobPage({ params }: PageProps) {
           </Link>
           <h1 style={{ viewTransitionName: `job-${job.slug}` }}>{job.title}</h1>
           <div className="meta">
-            <span className={`pill status${job.status === "Open" ? " open" : ""}`}>
+            <span
+              className={`pill status${job.status === "Open" ? " open" : ""}${filled ? " filled" : ""}`}
+            >
               {job.status}
             </span>
             <span className="pill">{job.team}</span>
@@ -79,6 +82,17 @@ export default async function JobPage({ params }: PageProps) {
         <div className="container">
           <div className="layout">
             <div className="content">
+              {filled && (
+                <p className="filled-note">
+                  Deze rol is vervuld. We laten de vacature staan, zodat je ziet wat voor mensen
+                  we zoeken. Past dit bij jou? Een{" "}
+                  <a href="mailto:info@rushmarketing.nl?subject=Open%20sollicitatie">
+                    open sollicitatie
+                  </a>{" "}
+                  is
+                  altijd welkom.
+                </p>
+              )}
               <p className="lede">{job.summary}</p>
 
               <h2>Wat ga je doen?</h2>
@@ -119,14 +133,21 @@ export default async function JobPage({ params }: PageProps) {
                   <dd>Doetinchem</dd>
                 </div>
               </dl>
-              <a href={mailHref} className="btn btn-primary">
-                Solliciteer
-              </a>
+              {filled ? (
+                <Link href="/#jobs" className="btn btn-primary">
+                  Bekijk open rollen
+                </Link>
+              ) : (
+                <a href={mailHref} className="btn btn-primary">
+                  Solliciteer
+                </a>
+              )}
             </aside>
           </div>
         </div>
       </section>
 
+      {!filled && (
       <section className="job-apply">
         <div className="container">
           <h2>
@@ -143,6 +164,7 @@ export default async function JobPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      )}
 
       <Footer />
     </>

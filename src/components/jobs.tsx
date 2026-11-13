@@ -1,6 +1,11 @@
 import { Link } from "next-view-transitions";
 
-import { jobs } from "@/data/jobs";
+import { jobs, openJobs } from "@/data/jobs";
+
+/** Vervulde rollen blijven zichtbaar, maar staan onderaan. */
+const sorted = [...jobs].sort(
+  (a, b) => Number(a.status === "Vervuld") - Number(b.status === "Vervuld"),
+);
 
 export function Jobs() {
   return (
@@ -11,7 +16,7 @@ export function Jobs() {
             Vacatures
           </span>
           <h2 data-reveal="1">
-            {jobs.length} open rollen.
+            {openJobs.length} open rollen.
             <br />
             Eén ervan <em>de jouwe</em>?
           </h2>
@@ -21,13 +26,17 @@ export function Jobs() {
           </p>
         </div>
         <div className="list" data-reveal>
-          {jobs.map((job) => (
-            <Link key={job.slug} className="job" href={`/vacatures/${job.slug}`}>
+          {sorted.map((job) => (
+            <Link key={job.slug} className={`job${job.status === "Vervuld" ? " filled" : ""}`} href={`/vacatures/${job.slug}`}>
               <span className="title" style={{ viewTransitionName: `job-${job.slug}` }}>
                 {job.title}
               </span>
               <span className="team">{job.team}</span>
-              <span className={`tag${job.status === "Nieuw" ? " new" : ""}`}>{job.status}</span>
+              <span
+                className={`tag${job.status === "Nieuw" ? " new" : ""}${job.status === "Vervuld" ? " filled" : ""}`}
+              >
+                {job.status}
+              </span>
               <span className="arr">→</span>
             </Link>
           ))}
