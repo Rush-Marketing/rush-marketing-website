@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { HeroBackground } from "@/components/hero-background";
-import { jobs } from "@/data/jobs";
+import { openJobs } from "@/data/jobs";
 
 export function Hero() {
   return (
@@ -29,7 +29,7 @@ export function Hero() {
         </p>
         <div className="ctas" data-reveal="3">
           <a href="#jobs" className="btn btn-light">
-            Bekijk {jobs.length} vacatures
+            Bekijk {openJobs.length} vacatures
           </a>
           <a href="#team" className="btn btn-glass">
             Ontmoet het team

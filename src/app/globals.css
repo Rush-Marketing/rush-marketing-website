@@ -1307,6 +1307,18 @@ a {
   background: var(--cream);
 }
 
+.people .card .photo .initials {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: var(--gold-light);
+  font-family: var(--font-heading);
+  font-size: 64px;
+  letter-spacing: 0.02em;
+}
+
 .people .card .photo > img {
   object-fit: cover;
   object-position: 50% 18%;
@@ -1438,6 +1450,16 @@ a {
 .jobs .tag.new {
   background: var(--gold-light);
   color: var(--gold-dark);
+}
+
+.jobs .tag.filled {
+  background: var(--green);
+  color: #fff;
+}
+
+.jobs .job.filled .title,
+.jobs .job.filled .team {
+  opacity: 0.55;
 }
 
 .jobs .job .arr {
@@ -1710,6 +1732,27 @@ footer .bottom a:hover {
   background: var(--gold-light);
   color: var(--gold-dark);
   font-weight: 600;
+}
+
+.job-hero .pill.status.filled {
+  background: var(--cream-2);
+  color: var(--text-muted);
+}
+
+.job-body .filled-note {
+  margin: 0 0 28px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-light);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.job-body .filled-note a {
+  color: var(--gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .job-hero .pill.status.open {

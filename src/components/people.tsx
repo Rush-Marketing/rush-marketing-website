@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { employees, employeesByTeam, teams, type Team } from "@/data/employees";
+import { openJobs } from "@/data/jobs";
 
 function TeamRail({ team }: { team: Team }) {
   const railRef = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ function TeamRail({ team }: { team: Team }) {
   };
 
   const people = employeesByTeam(team.slug);
+  const openRoles = openJobs.filter((j) => j.team === team.name).length;
 
   return (
     <div className="team-rail" data-reveal>
@@ -58,9 +60,9 @@ function TeamRail({ team }: { team: Team }) {
           <p>{team.description}</p>
         </div>
         <div className="side">
-          {team.openRoles > 0 ? (
+          {openRoles > 0 ? (
             <a href="#jobs" className="open-link">
-              {team.openRoles} open {team.openRoles === 1 ? "rol" : "rollen"} →
+              {openRoles} open {openRoles === 1 ? "rol" : "rollen"} →
             </a>
           ) : null}
           {hasOverflow ? (
@@ -89,7 +91,13 @@ function TeamRail({ team }: { team: Team }) {
         {people.map((p) => (
           <div key={p.name} className="card" tabIndex={0}>
             <div className="photo">
-              <Image src={p.avatarUrl} alt={p.name} fill sizes="240px" />
+              {p.avatarUrl ? (
+                <Image src={p.avatarUrl} alt={p.name} fill sizes="240px" />
+              ) : (
+                <span className="initials" aria-hidden="true">
+                  {initials(p.name)}
+                </span>
+              )}
               <div className="overlay">
                 <p className="bio">{p.bio}</p>
                 <p className="call">
@@ -106,6 +114,12 @@ function TeamRail({ team }: { team: Team }) {
       </div>
     </div>
   );
+}
+
+/** Eerste letter van voor- en achternaam, zonder tussenvoegsels. */
+function initials(name: string): string {
+  const parts = name.split(" ").filter((w) => /^[A-ZÀ-Ý]/.test(w));
+  return `${parts[0]?.[0] ?? ""}${parts.length > 1 ? parts[parts.length - 1][0] : ""}`;
 }
 
 export function People() {

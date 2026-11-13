@@ -1,7 +1,9 @@
+import { employees } from "@/data/employees";
+
 const stats = [
   { num: "2", label: "merken: Kitchen4All en Sani4All" },
   { num: "49", label: "winkels door heel Nederland" },
-  { num: "20", label: "specialisten, één club" },
+  { num: String(employees.length), label: "specialisten, één club" },
   { num: "9.000+", label: "keukens en badkamers per jaar" },
 ];
 

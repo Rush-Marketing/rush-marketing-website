@@ -38,12 +38,12 @@ src/
 │   └── reveal.tsx               # client component (scroll-reveal via IntersectionObserver)
 ├── data/
 │   ├── jobs.ts                  # vacatures + detail content (slug, summary, responsibilities, requirements)
-│   └── employees.ts             # 20 mensen in 7 groepen — bron: "Wie doet wat bij 4All" (mei 2026), wordt Payload-fetch
+│   └── employees.ts             # 22 mensen in 7 groepen — bron: "Wie doet wat bij 4All" (mei 2026), wordt Payload-fetch
 └── public/
     ├── fonts/                   # Bogart Semibold + Bold (.ttf)
     ├── logos/                   # Rush, K4A, S4A logos + zo-fijn-script.png (wit handschrift-element)
     ├── imagery/                 # sfeerfoto's, rush-office-*.jpg (kantoor), rush-teamfoto.jpg
-    └── team/                    # 20 medewerkersportretten (geoptimaliseerd, max 900px)
+    └── team/                    # 22 medewerkersportretten (geoptimaliseerd, max 900px)
 ```
 
 ## Huisstijl
@@ -90,7 +90,7 @@ Warm, helder en menselijk. **Geen em-dashes** (—). Gebruik punt, komma of dubb
 type Job = {
   slug: string;                 // /vacatures/[slug]
   title: string;
-  status: "Nieuw" | "Open";
+  status: "Nieuw" | "Open" | "Vervuld"; // Vervuld blijft zichtbaar, telt niet mee, geen sollicitatieknop
   team: string;                 // gematchte team-naam voor visual grouping
   summary: string;              // lede op detail page
   responsibilities: string[];   // "Wat ga je doen?"
@@ -101,7 +101,7 @@ Vacatures komen uit **"Wie doet wat bij 4All" (mei 2026)**, sectie "Openstaande 
 
 ### `employees.ts` (tijdelijk)
 ```ts
-type Team = { slug, name, description, openRoles };
+type Team = { slug, name, description }; // open rollen per team worden geteld uit jobs.ts
 type Employee = { name, role, teamSlug, bio, callFor, avatarUrl, isLead? };
 ```
 `bio` en `callFor` ("Bel voor: …") komen uit "Wie doet wat bij 4All" en verschijnen als hover-overlay op de foto-cards in de people-sectie. Dit wordt Payload (`Employees` collection in `4all-web-platform/apps/admin`). Zie **Roadmap**.
@@ -119,7 +119,7 @@ Bij nieuwe vacature: voeg toe aan `src/data/jobs.ts` → build genereert de rout
 
 **Klaar:**
 - One-pager met 13 secties
-- 9 vacature detail-pagina's met apply CTA's (mailto met pre-filled subject)
+- Vacature detail-pagina's met apply CTA's (mailto met pre-filled subject)
 - Vercel deploy + GitHub auto-deploy
 - Publieke repo
 
