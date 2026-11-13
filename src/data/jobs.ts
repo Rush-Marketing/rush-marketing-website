@@ -22,6 +22,79 @@ export type Job = {
  */
 export const jobs: Job[] = [
   {
+    slug: "coordinator-franchise",
+    title: "Coördinator Franchise",
+    status: "Nieuw",
+    team: "Franchise & Lokale Activatie",
+    summary:
+      "Alles wat onze 49 winkels aan het servicekantoor vragen, komt bij jou binnen. Jij beoordeelt het, zet het uit bij het juiste team en zorgt dat de ondernemer op tijd een goed antwoord krijgt. Zo weet elke winkel waar hij aan toe is, zonder gedoe.",
+    responsibilities: [
+      "Je bent het loket voor de winkels: je beoordeelt elke aanvraag, zet het werk uit bij het juiste team en controleert het resultaat voordat het naar de winkel gaat.",
+      "Je bewaakt wat we ondernemers beloven: een bevestiging binnen 48 uur, een status na 7 dagen en een antwoord binnen 14 dagen.",
+      "Je houdt ons planbord op orde. Elk item heeft een eigenaar, een werkdatum en een deadline, en jij stuurt op opvolging.",
+      "Je coördineert het winkelpakket, het campagnemateriaal en de communicatie rond winkelopeningen.",
+      "Je stuurt retail support en leveranciers aan, bewaakt budgetten en briefings, en verstuurt de maandrapportage per winkel.",
+      "Je gaat samen met de teamlead langs bij winkels en vertaalt wat je daar hoort naar een beter proces.",
+    ],
+    requirements: [
+      "Je bent een ervaren coördinator of projectmanager met een retailhart. Je draagt een proces, laat niets liggen en trekt op tijd aan de bel.",
+      "Een paar jaar ervaring met winkels, dealers of franchisenemers als interne klant, het liefst voor meerdere vestigingen tegelijk.",
+      "Je bent handig met systemen, bij voorkeur Monday of iets vergelijkbaars, en zet zelf structuur neer waar die ontbreekt.",
+      "Stevig en vriendelijk: je durft nee te zeggen, managet verwachtingen en houdt ondernemers en collega's aan afspraken.",
+      "HBO werk- en denkniveau. Ervaring met briefings aan externe partijen, budgetbewaking of lokale marketing is mooi meegenomen.",
+      "Je werkt 32 tot 40 uur per week.",
+    ],
+  },
+  {
+    slug: "projectleider-winkelopeningen",
+    title: "Projectleider winkelopeningen",
+    status: "Nieuw",
+    team: "Franchise & Lokale Activatie",
+    summary:
+      "Volgend jaar openen we tien nieuwe winkels, en jij hebt de regie. Van handtekening tot openingsdag: jij zorgt dat de planning klopt, de bouwpartners op tijd klaar zijn en de ondernemer weet wat er van hem wordt verwacht. Een fulltime rol vanuit Doetinchem, met veel dagen op locatie.",
+    responsibilities: [
+      "Je bent eigenaar van het draaiboek per opening: planning, bouwpartners voor bouw, installatie, signing en inrichting, de bestelmomenten en de oplevering.",
+      "Je begeleidt de ondernemer door het hele traject. Wat regelt hij zelf en wanneer, en wat doen wij vanuit het servicekantoor?",
+      "Je bewaakt het budget per opening samen met finance en rondt de eindafrekening af binnen vier weken na de opening.",
+      "Je bouwt aan ons netwerk van bouwpartners: een vaste kern, met per regio partijen eromheen.",
+      "Je hebt twee tot drie openingen tegelijk in voorbereiding, elk met een doorlooptijd van drie tot vier maanden.",
+      "Na elke opening maak je het draaiboek beter, zodat de volgende winkel soepeler gaat.",
+    ],
+    requirements: [
+      "Ervaring met winkelbouw en winkelopeningen. Brede retailervaring telt voor ons zwaarder dan puur technische kennis.",
+      "Je bent een aanpakker die graag op pad is en zich eigenaar voelt van het hele traject.",
+      "Je plant en bewaakt strak, stuurt leveranciers aan en houdt de kosten in de hand.",
+      "Je communiceert helder met ondernemers, leveranciers en collega's, en blijft rustig als het spannend wordt.",
+      "Je werkt graag met vaste processen en checklists, en verbetert ze als het beter kan.",
+      "Mooi meegenomen: genoeg technische kennis om een aannemer scherp te houden, en ervaring met franchise of filiaalbedrijven.",
+      "Je hebt rijbewijs B, want onze winkels staan door heel Nederland.",
+    ],
+  },
+  {
+    slug: "developer",
+    title: "Developer",
+    status: "Nieuw",
+    team: "Tech & Innovatie",
+    summary:
+      "Zoek je een plek waar je mag bouwen, proberen en leren? Bij Rush werk je aan de websites van Kitchen4All en Sani4All, de afspraakflow en alles wat daarachter draait. AI is bij ons dagelijks gereedschap en er is ruimte genoeg voor nieuwe ideeën. Je werkt twee dagen per week op kantoor in Doetinchem en de rest op afstand.",
+    responsibilities: [
+      "Je bouwt mee aan de websites van beide formules, de afspraakflow en de koppelingen met ons franchiseplatform en datawarehouse.",
+      "Je werkt met Next.js en TypeScript op Vercel, met Payload, Supabase en PostHog.",
+      "Je ontwikkelt elke dag met AI, zoals Claude Code. Dat is bij ons geen extraatje, zo werken we.",
+      "Je pakt automatisering en slimme workflows op, samen met onze automation specialist.",
+      "Je krijgt ruimte om nieuwe dingen te proberen: agents, koppelingen en tooling voor het hele kantoor.",
+    ],
+    requirements: [
+      "Je bent een jong talent met één tot vier jaar ervaring, of een starter met een sterk portfolio.",
+      "Supernieuwsgierig: je probeert dingen uit, leert snel en deelt wat werkt.",
+      "Een basis in TypeScript en Next.js, of een vergelijkbaar modern framework.",
+      "Je gebruikt AI-tools al dagelijks en wilt daarin vooroplopen.",
+      "Zelfstandig en resultaatgericht, met gevoel voor marketing en automatisering.",
+      "Mooi meegenomen: ervaring met Supabase, Payload, PostHog of marketing automation.",
+      "Je hoeft niet uit de regio te komen.",
+    ],
+  },
+  {
     slug: "formulemanager-kitchen4all",
     title: "Formulemanager Kitchen4All",
     status: "Vervuld",
